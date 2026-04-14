@@ -8,15 +8,13 @@ export default function TelaInicial() {
       {/* Título */}
       <Text style={styles.titulo}>JardimSecreto</Text>
 
-      {/* Imagem */}
       <Image
-        source={{ uri: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6" }}
+        source={ require ('../../assets/logo.jpg') }
         style={styles.imagem}
       />
 
-      {/* Texto abaixo da imagem */}
       <Text style={styles.texto}>
-        Onde a natureza revela seus pequenos segredos 🌸
+        Onde a natureza revela seus pequenos segredos !
       </Text>
 
       {/* Botão */}
@@ -53,7 +51,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   botao: {
-    backgroundColor: "#4A5D23",
+    backgroundColor: "#ccaaf7ff",
     paddingVertical: 12,
     paddingHorizontal: 40,
     borderRadius: 10,

@@ -1,11 +1,10 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
-export default function TelaInicial() {
+export default function TelaInicial({navigation}) {
   return (
     <View style={styles.container}>
       
-      {/* Título */}
       <Text style={styles.titulo}>JardimSecreto</Text>
 
       <Image
@@ -17,8 +16,8 @@ export default function TelaInicial() {
         Onde a natureza revela seus pequenos segredos !
       </Text>
 
-      {/* Botão */}
-      <TouchableOpacity style={styles.botao}>
+      <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate("Acessar")}
+>
         <Text style={styles.textoBotao}>ACESSAR</Text>
       </TouchableOpacity>
 
@@ -29,8 +28,8 @@ export default function TelaInicial() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center", // centraliza vertical
-    alignItems: "center", // centraliza horizontal
+    justifyContent: "center",
+    alignItems: "center", 
     backgroundColor: "#fff",
     padding: 20,
   },
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   botao: {
-    backgroundColor: "#ccaaf7ff",
+    backgroundColor: "#143a25ff",
     paddingVertical: 12,
     paddingHorizontal: 40,
     borderRadius: 10,

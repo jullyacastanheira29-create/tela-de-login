@@ -1,14 +1,92 @@
-import { StyleSheet,Text, View} from "react-native";
+import { StyleSheet,Text, View, Image, ScrollView} from "react-native";
 export default function HomeScreen(){
     
     return (
-        <View>
-        <Text style={StyleSheet.bemvindo}>Olá, visitante</Text>
+        <ScrollView style={styles.container}>
+        <Text style={styles.welcome}>Olá, visitante</Text>
+
+        <Text style={styles.subtitle}>Encontre a planta perfeita para seu lar.</Text>
+
+        <Image
+            source={{uri: "https://i.pinimg.com/736x/44/13/0a/44130a70587e447b539a5c7fec6cc459.jpg"}}
+            style={styles.banner}
+        />
+
+        <Text style={styles.sectionTitle}>Produtos populares</Text>
+
+        <View style={styles.card}>
+            <Image
+                source={{
+                    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfzgQZ-yIDGioDohvHeNR7d_8zJVgheoQGHPsG8tzr4w&s=10"
+                }}
+                style={styles.cardImage}
+                />
+            <Text style={styles.plantName}>Monstera Deliciosa</Text>
+            <Text style={styles.price}>R$89,90</Text>
         </View>
+         <View style={styles.card}>
+            <Image
+                source={{
+                    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdVI53XGhKmovtSt9EQE1k0Y89BZGqRuA4im10qCeKyw&s=10"
+                }}
+                style={styles.cardImage}
+                />
+            <Text style={styles.plantName}>Rosa do Deserto</Text>
+            <Text style={styles.price}>R$109,90</Text>
+        </View>
+        </ScrollView>
     );
 }
 const styles = StyleSheet.create({
-        bemvindo: {
-            fontWeight: 'bold',
-        }
+    container:{
+        flex: 1,
+        backgroundColor: "#ffffff",
+        padding: 20,
+    }, 
+    welcome:{
+        fontSize: 28,
+        fontWeight: "bold",
+        color: "#4A5D23",
+        marginTop: 10,
+    },
+    subtitle: {
+        fontSize: 16,
+        color: "#666",
+        marginTop: 5,
+        marginBottom: 20,
+    },
+    banner:{
+        width: "100%",
+        height: 200,
+        borderRadius: 15,
+    },    
+    sectionTitle:{
+        fontSize: 22,
+        fontWeight: "bold",
+        marginTop: 25,
+        marginBottom: 15,
+        color: "#4A5D23"
+    },
+    card:{
+        backgroundColor: "#F5F5F5",
+        padding: 15, 
+        borderRadius: 12,
+        marginBottom: 15,
+    },
+    cardImage:{
+        width: "100%",
+        height: 180,
+        borderRadius: 10,
+        marginBottom: 10,
+    },
+    plantName:{
+        fontSize: 18,
+        fontWeight: "bold",
+    },
+    price:{
+        fontSize: 16,
+        color: "#4A5D23",
+        marginTop: 5,
+    },
+
     });

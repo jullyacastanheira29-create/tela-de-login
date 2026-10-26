@@ -1,8 +1,10 @@
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import SplashScreen from "../telas/SplashScreen";
-import LoginScreen from "../telas/LoginScreen";
-import RegisterScreen from "../telas/RegisterScreen";
+// Telas de cadastro e login comentadas para não serem utilizadas agora
+// import SplashScreen from "../telas/SplashScreen";
+// import LoginScreen from "../telas/LoginScreen";
+// import RegisterScreen from "../telas/RegisterScreen";
 
 import TabNavigation from "./tabNavigation";
 
@@ -13,21 +15,23 @@ export default function StackNavigation() {
     return (
 
         <Stack.Navigator
-            initialRouteName="splash"
+            // Define a tela inicial como Home (Tabs)
+            initialRouteName="Tabs"
+
             screenOptions={{
                 headerShown: false
             }}
         >
 
-            <Stack.Screen
-                name="splash"
-                component={SplashScreen}
-            />
-
+            {/* Tela principal com as abas do aplicativo */}
             <Stack.Screen
                 name="Tabs"
                 component={TabNavigation}
             />
+
+            {/*
+            Telas de cadastro e login desativadas temporariamente.
+            Para voltar a utilizá-las, remova os comentários.
 
             <Stack.Screen
                 name="Acessar"
@@ -38,9 +42,9 @@ export default function StackNavigation() {
                 name="Login"
                 component={LoginScreen}
             />
+            */}
 
         </Stack.Navigator>
 
     );
 }
-
